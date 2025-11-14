@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Stack Feeds Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .app {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      width: 18%;
+      min-width: 220px;
+      max-width: 320px;
+      background: #111827;
+      color: #e5e7eb;
+      padding: 1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sidebar-header {
+      margin-bottom: 0.25rem;
+    }
+
+    .sidebar-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .sidebar-subtitle {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.15rem;
+    }
+
+    .link-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      padding-right: 0.25rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .category-header {
+      margin-top: 0.75rem;
+      margin-bottom: 0.15rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #9ca3af;
+      letter-spacing: 0.05em;
+    }
+
+    .link-list li a {
+      display: block;
+      padding: 0.35rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      word-break: break-word;
+    }
+
+    .link-list li a:hover {
+      background: #374151;
+    }
+
+    .link-list li a.active {
+      background: #2563eb;
+      color: #f9fafb;
+    }
+
+    .sidebar-footer {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+
+    /* RIGHT PREVIEW AREA */
+    .preview-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .preview-header {
+      padding: 0.6rem 0.9rem;
+      font-size: 0.8rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .preview-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #4b5563;
+    }
+
+    .preview-controls {
+      display: flex;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .preview-controls code {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      background: #e5e7eb;
+    }
+
+    .preview-frame {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+
+    .preview-placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 0.9rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .app {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        max-width: none;
+        height: 40vh;
+      }
+      .preview-area {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">AI Stack Feeds</div>
+        <div class="sidebar-subtitle">
+          Hover to preview (if enabled). Click to open in a new tab.
+        </div>
+      </div>
+
+      <ul class="link-list" id="linkList">
+        <!-- Filled from links.json -->
+      </ul>
+
+      <div class="sidebar-footer">
+        Stack: Models → Data → Frameworks → Infra → MLOps → Eval → Product → Hardware.
+      </div>
+    </aside>
+
+    <!-- RIGHT PREVIEW -->
+    <section class="preview-area">
+      <div class="preview-header">
+        <span id="currentUrlLabel" class="preview-label">Loading sources…</span>
+        <div class="preview-controls">
+          <code>Hover → Preview</code>
+          <code>Click → New Tab</code>
+        </div>
+      </div>
+
+      <iframe
+        id="previewFrame"
+        class="preview-frame"
+        src="about:blank"
+        title="Feed preview">
+      </iframe>
+
+      <div id="previewFallback" class="preview-placeholder" style="display:none;">
+        Hover a link on the left to see its page (if preview is enabled), or click to open the site in a new tab.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const linkList = document.getElementById('linkList');
+      const frame = document.getElementById('previewFrame');
+      const urlLabel = document.getElementById('currentUrlLabel');
+      const fallback = document.getElementById('previewFallback');
+
+      let currentActiveLinkEl = null;
+
+      function setActive(el) {
+        if (currentActiveLinkEl) {
+          currentActiveLinkEl.classList.remove('active');
+        }
+        if (el) {
+          el.classList.add('active');
+          currentActiveLinkEl = el;
+        }
+      }
+
+      function buildSidebar(data) {
+        linkList.innerHTML = '';
+
+        data.categories.forEach(category => {
+          // Category heading
+          const headerLi = document.createElement('li');
+          headerLi.textContent = category.name;
+          headerLi.className = 'category-header';
+          linkList.appendChild(headerLi);
+
+          // Links
+          category.links.forEach(linkDef => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+
+            a.href = '#';
+            a.textContent = linkDef.label;
+            a.dataset.url = linkDef.url;
+            a.dataset.previewMode = linkDef.previewMode || 'none';
+
+            // Hover → preview
+            a.addEventListener('mouseenter', () => {
+              const mode = a.dataset.previewMode;
+              const url = a.dataset.url;
+
+              setActive(a);
+
+              if (mode === 'iframe') {
+                frame.style.display = 'block';
+                fallback.style.display = 'none';
+                frame.src = url;
+                urlLabel.textContent = url;
+              } else {
+                // No preview, just show hint
+                frame.src = 'about:blank';
+                frame.style.display = 'none';
+                fallback.style.display = 'flex';
+                urlLabel.textContent = 'Preview disabled – click to open in a new tab.';
+              }
+            });
+
+            // Click → open real page
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              const url = a.dataset.url;
+              if (url) {
+                window.open(url, '_blank');
+              }
+            });
+
+            li.appendChild(a);
+            linkList.appendChild(li);
+          });
+        });
+
+        urlLabel.textContent = 'Hover a link to preview (if enabled).';
+        frame.src = 'about:blank';
+        frame.style.display = 'none';
+        fallback.style.display = 'flex';
+      }
+
+      // Load external config (works fine on GitHub Pages)
+      fetch('links.json')
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(buildSidebar)
+        .catch(err => {
+          console.error('Error loading links.json', err);
+          urlLabel.textContent = 'Error loading links.json – check file path or JSON syntax.';
+          frame.style.display = 'none';
+          fallback.style.display = 'flex';
+        });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+{
+  "categories": [
+    {
+      "name": "Foundation Model Providers & AI Labs",
+      "links": [
+        {
+          "label": "OpenAI – News & Announcements",
+          "url": "https://openai.com/news",
+          "previewMode": "none"
+        },
+        {
+          "label": "OpenAI – Developer Blog",
+          "url": "https://developers.openai.com/blog",
+          "previewMode": "none"
+        },
+        {
+          "label": "Anthropic – Newsroom",
+          "url": "https://www.anthropic.com/news",
+          "previewMode": "none"
+        },
+        {
+          "label": "Google AI Blog",
+          "url": "https://blog.google/technology/ai/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Google DeepMind – Blog",
+          "url": "https://deepmind.google/discover/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Meta AI – Blog",
+          "url": "https://ai.meta.com/blog/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "LLM Frameworks & Application Stack",
+      "links": [
+        {
+          "label": "LangChain – Home",
+          "url": "https://www.langchain.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "LangChain – Docs",
+          "url": "https://python.langchain.com/docs/get_started/introduction",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "LlamaIndex – Blog",
+          "url": "https://www.llamaindex.ai/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Haystack – Deepset AI Blog",
+          "url": "https://haystack.deepset.ai/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "vLLM – Docs",
+          "url": "https://docs.vllm.ai/en/latest/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Hugging Face – Blog",
+          "url": "https://huggingface.co/blog",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "Vector DBs & Retrieval / RAG Infra",
+      "links": [
+        {
+          "label": "Weaviate – Blog",
+          "url": "https://weaviate.io/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Qdrant – Blog",
+          "url": "https://qdrant.tech/blog/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Milvus – Blog",
+          "url": "https://milvus.io/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Milvus – Architecture Deep Dive",
+          "url": "https://milvus.io/blog/deep-dive-1-milvus-architecture-overview.md",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Chroma – Docs",
+          "url": "https://docs.trychroma.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "pgvector – GitHub",
+          "url": "https://github.com/pgvector/pgvector",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "AI Infra & Serverless / Cloud Platforms",
+      "links": [
+        {
+          "label": "Modal – Blog",
+          "url": "https://modal.com/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Fly.io – Blog",
+          "url": "https://fly.io/blog/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Cloudflare – AI Posts",
+          "url": "https://blog.cloudflare.com/tag/ai/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Hugging Face – Spaces & Inference",
+          "url": "https://huggingface.co/blog/tags/spaces",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Lambda Labs – Blog",
+          "url": "https://lambdalabs.com/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Google Cloud – AI & ML Blog",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "MLOps & Experiment Tracking",
+      "links": [
+        {
+          "label": "Weights & Biases – Articles",
+          "url": "https://wandb.ai/site/articles",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Weights & Biases – Reports",
+          "url": "https://wandb.ai/site/reports",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "MLflow – Home",
+          "url": "https://mlflow.org/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Databricks – MLflow Posts",
+          "url": "https://www.databricks.com/blog?keys=mlflow",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "ClearML – Blog",
+          "url": "https://clear.ml/blog",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "LLM Evaluation & Observability",
+      "links": [
+        {
+          "label": "LangSmith – Home",
+          "url": "https://docs.langchain.com/langsmith/home",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "LangSmith – Observability",
+          "url": "https://docs.langchain.com/langsmith/observability",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "TruLens – LLM Evaluation",
+          "url": "https://www.trulens.org/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Ragas – RAG Evaluation",
+          "url": "https://docs.ragas.io/en/stable/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Arize AI – Blog",
+          "url": "https://arize.com/blog/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "Data Labelling, Curation & Management",
+      "links": [
+        {
+          "label": "Labelbox – Blog",
+          "url": "https://labelbox.com/blog/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Labelbox – Guides",
+          "url": "https://labelbox.com/guides/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Snorkel AI – Data-Centric AI",
+          "url": "https://snorkel.ai/data-centric-ai/weak-supervision/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Hugging Face – Datasets Docs",
+          "url": "https://huggingface.co/docs/datasets/en/index",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "AI / ML Research Papers & Code",
+      "links": [
+        {
+          "label": "arXiv – cs.LG (Machine Learning)",
+          "url": "https://arxiv.org/list/cs.LG/recent",
+          "previewMode": "none"
+        },
+        {
+          "label": "arXiv – cs.CL (NLP / LLMs)",
+          "url": "https://arxiv.org/list/cs.CL/recent",
+          "previewMode": "none"
+        },
+        {
+          "label": "Hugging Face – Trending Papers",
+          "url": "https://huggingface.co/papers/trending",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "OpenReview – Home",
+          "url": "https://openreview.net/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "AI Trends, Newsletters & Deep Dives",
+      "links": [
+        {
+          "label": "deeplearning.ai – The Batch",
+          "url": "https://www.deeplearning.ai/the-batch/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Import AI – Jack Clark",
+          "url": "https://importai.substack.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Epoch AI – Scaling & Forecasting",
+          "url": "https://epoch.ai/blog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Chip Huyen – AI / MLOps Blog",
+          "url": "https://huyenchip.com/blog/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "Big Tech Engineering & Architecture Blogs",
+      "links": [
+        {
+          "label": "Netflix Tech Blog",
+          "url": "https://netflixtechblog.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Uber Engineering Blog",
+          "url": "https://www.uber.com/blog/engineering/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Grab – Engineering Blog",
+          "url": "https://engineering.grab.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "AWS – Architecture Blog",
+          "url": "https://aws.amazon.com/blogs/architecture/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "AWS – Machine Learning Blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Microsoft Azure – Azure AI Blog",
+          "url": "https://techcommunity.microsoft.com/t5/azure-ai-blog/bg-p/AzureAIBlog",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Meta – Engineering Blog",
+          "url": "https://engineering.fb.com/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Google SRE – Resources",
+          "url": "https://sre.google/resources/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "Hardware, GPUs & Systems Internals",
+      "links": [
+        {
+          "label": "NVIDIA Developer – AI & GPU Computing",
+          "url": "https://developer.nvidia.com/blog/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "NVIDIA TensorRT / TensorRT-LLM",
+          "url": "https://developer.nvidia.com/tensorrt",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "PyTorch – Official Blog",
+          "url": "https://pytorch.org/blog/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "TensorFlow – Official Blog",
+          "url": "https://blog.tensorflow.org/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Triton – Docs (Custom GPU Kernels)",
+          "url": "https://triton-lang.org/",
+          "previewMode": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "AI Product, Strategy & VC Theses",
+      "links": [
+        {
+          "label": "a16z – AI Hub",
+          "url": "https://a16z.com/ai/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "a16z – AI Revolution Series",
+          "url": "https://a16z.com/airevolution/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Sequoia – AI in 2025",
+          "url": "https://sequoiacap.com/article/ai-in-2025/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Sequoia – AI’s $600B Question",
+          "url": "https://sequoiacap.com/article/ais-600b-question/",
+          "previewMode": "iframe"
+        },
+        {
+          "label": "Aakash Gupta – AI Product & Growth",
+          "url": "https://www.news.aakashg.com/",
+          "previewMode": "iframe"
+        }
+      ]
+    }
+  ]
+}
